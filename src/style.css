@@ -240,6 +240,21 @@ nav a:hover {
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+  position: relative;
+}
+
+.gallery__odstavec {
+  font-size: 35px;
+  font-family: sans-serif;
+  text-align: center;
+  color: #301a1a;
+  background-color: #ea946f;
+  border-radius: 4px;
+  opacity: 0.8;
+  max-width: 45vmax;
+  position: absolute;
+  top: 85px;
+  left: 5px;
 }
 
 .contacts {

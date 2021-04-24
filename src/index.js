@@ -1,9 +1,6 @@
 import './style.css';
 
-import { Layer } from './Layer/index.js';
 import { Drink } from './Drink/index.js';
-
-console.log('funguju!');
 
 const navigation = () => {
   const navigationClass = document.querySelector('nav');
@@ -17,44 +14,27 @@ document
   .querySelectorAll('nav a')
   .forEach((element) => element.addEventListener('click', navigation));
 
-/**ukol 4 */
-
-/**ukol 5
-
-const drinkInfoElm = document.querySelector('.drink__info');
-drinkInfoElm.innerHTML += Layer({
-  color: '#feeeca',
-  label: 'mléčná pěna',
-});
-
-drinkInfoElm.innerHTML += Layer({
-  color: '#fed7b0',
-  label: 'teplé mléko',
-});
-drinkInfoElm.innerHTML += Layer({
-  color: '#613916',
-  label: 'espresso',
-});
-*/
-
-const layers = [
+const drinks = [
   {
-    color: '#feeeca',
-    label: 'mléčná pěna',
+    id: 'cappuccino',
+    name: 'Cappuccino',
+    ordered: false,
+    layers: [
+      {
+        color: '#feeeca',
+        label: 'mléčná pěna',
+      },
+      {
+        color: '#fed7b0',
+        label: 'teplé mléko',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
   },
   {
-    color: '#fed7b0',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
-  },
-];
-
-const drinkList = document.querySelector('.drinks-list');
-drinkList.appendChild(
-  Drink({
     id: 'romano',
     name: 'Romano',
     ordered: false,
@@ -68,5 +48,10 @@ drinkList.appendChild(
         label: 'espresso',
       },
     ],
-  }),
-);
+  },
+];
+
+const drinksList = document.querySelector('.drinks-list');
+drinks.forEach((drink) => {
+  drinksList.appendChild(Drink(drink));
+});
